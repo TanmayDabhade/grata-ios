@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		112E7E862E3B52D60003854F /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 112E7E852E3B52D60003854F /* Auth */; };
+		112E7E882E3B52D60003854F /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 112E7E872E3B52D60003854F /* Functions */; };
+		112E7E8A2E3B52D60003854F /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 112E7E892E3B52D60003854F /* PostgREST */; };
+		112E7E8C2E3B52D60003854F /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 112E7E8B2E3B52D60003854F /* Realtime */; };
+		112E7E8E2E3B52D60003854F /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 112E7E8D2E3B52D60003854F /* Storage */; };
+		112E7EF12E3B56300003854F /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 112E7EF02E3B56300003854F /* Supabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		11E46E8A2E39E0C500542357 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +74,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112E7E8A2E3B52D60003854F /* PostgREST in Frameworks */,
+				112E7E882E3B52D60003854F /* Functions in Frameworks */,
+				112E7EF12E3B56300003854F /* Supabase in Frameworks */,
+				112E7E862E3B52D60003854F /* Auth in Frameworks */,
+				112E7E8E2E3B52D60003854F /* Storage in Frameworks */,
+				112E7E8C2E3B52D60003854F /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,13 +100,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112E7EEF2E3B56300003854F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11E46E6F2E39E0C100542357 = {
 			isa = PBXGroup;
 			children = (
-				11E46E7A2E39E0C100542357 /* Grata */,
 				11E46E8C2E39E0C500542357 /* GrataTests */,
 				11E46E962E39E0C500542357 /* GrataUITests */,
 				11E46E792E39E0C100542357 /* Products */,
+				11E46E7A2E39E0C100542357 /* Grata */,
+				112E7EEF2E3B56300003854F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +148,12 @@
 			);
 			name = Grata;
 			packageProductDependencies = (
+				112E7E852E3B52D60003854F /* Auth */,
+				112E7E872E3B52D60003854F /* Functions */,
+				112E7E892E3B52D60003854F /* PostgREST */,
+				112E7E8B2E3B52D60003854F /* Realtime */,
+				112E7E8D2E3B52D60003854F /* Storage */,
+				112E7EF02E3B56300003854F /* Supabase */,
 			);
 			productName = Grata;
 			productReference = 11E46E782E39E0C100542357 /* Grata.app */;
@@ -208,6 +237,9 @@
 			);
 			mainGroup = 11E46E6F2E39E0C100542357;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 11E46E792E39E0C100542357 /* Products */;
 			projectDirPath = "";
@@ -297,8 +329,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,8 +359,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,6 +607,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		112E7E852E3B52D60003854F /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		112E7E872E3B52D60003854F /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		112E7E892E3B52D60003854F /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		112E7E8B2E3B52D60003854F /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		112E7E8D2E3B52D60003854F /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		112E7EF02E3B56300003854F /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 112E7E842E3B52D60003854F /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11E46E702E39E0C100542357 /* Project object */;
 }

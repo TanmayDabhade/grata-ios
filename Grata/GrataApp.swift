@@ -6,27 +6,34 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct GrataApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    // Core-Data
+    let persistenceController = PersistenceController.shared
+    // Auth state (Supabase)
+    @StateObject private var authVM = AuthViewModel()
+    // onboarding flag
+    @AppStorage("hasOnboarded") private var hasOnboarded = false
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if !hasOnboarded {
+                    OnboardingView()
+                } else if authVM.isLoggedIn {
+                    MainTabView()
+                } else {
+                    LoginView()
+                }
+            }
+            .environmentObject(authVM)
+            .environment(\.managedObjectContext,
+                          persistenceController.container.viewContext)
+            .task {
+                // restoreSession is async
+                await authVM.restoreSession()
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
